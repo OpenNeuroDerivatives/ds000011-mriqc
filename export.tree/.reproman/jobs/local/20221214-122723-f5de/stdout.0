@@ -1,0 +1,293 @@
+[ReproMan] pre-command...
+[ReproMan] executing command code/containers/scripts/singularity_cmd run code/containers/images/bids/bids-mriqc--22.0.6.sing sourcedata/raw /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/mriqc/ds000011-mriqc participant --participant-label '09' -w '/scratch1/03201/jbwexler/work_dir/mriqc/ds000011_sub-09' -vv --nprocs 11 --ants-nthreads 8 --verbose-reports --dsname ds000011 --ica --mem_gb 30
+[ReproMan] ... within /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/mriqc/ds000011-mriqc
+221214-18:30:28,629 cli IMPORTANT:
+	 
+    Running MRIQC version 22.0.6:
+      * BIDS dataset path: /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/mriqc/ds000011-mriqc/sourcedata/raw.
+      * Output folder: /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/mriqc/ds000011-mriqc.
+      * Analysis levels: ['participant'].
+
+221214-18:30:28,913 nipype.workflow INFO:
+	 Building functional MRIQC workflow for files: /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/mriqc/ds000011-mriqc/sourcedata/raw/sub-09/func/sub-09_task-Classificationprobewithoutfeedback_bold.nii.gz, /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/mriqc/ds000011-mriqc/sourcedata/raw/sub-09/func/sub-09_task-Dualtaskweatherprediction_run-01_bold.nii.gz, /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/mriqc/ds000011-mriqc/sourcedata/raw/sub-09/func/sub-09_task-Dualtaskweatherprediction_run-02_bold.nii.gz, /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/mriqc/ds000011-mriqc/sourcedata/raw/sub-09/func/sub-09_task-Singletaskweatherprediction_run-01_bold.nii.gz, /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/mriqc/ds000011-mriqc/sourcedata/raw/sub-09/func/sub-09_task-Singletaskweatherprediction_run-02_bold.nii.gz, /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/mriqc/ds000011-mriqc/sourcedata/raw/sub-09/func/sub-09_task-tonecounting_bold.nii.gz.
+221214-18:30:36,892 nipype.workflow INFO:
+	 Building anatomical MRIQC workflow (</scratch1/03201/jbwexler/openneuro_derivatives/derivatives/mriqc/ds000011-mriqc/sourcedata/raw/sub-09/anat/sub-09_T1w.nii.gz>)..
+221214-18:31:35,768 cli WARNING:
+	 IMPORTANT: Anonymized quality metrics (IQMs) will be submitted to MRIQC's metrics repository. Submission of IQMs can be disabled using the ``--no-sub`` argument. Please visit https://mriqc.readthedocs.io/en/latest/dsa.html to revise MRIQC's Data Sharing Agreement.
+221214-18:31:35,985 nipype.workflow INFO:
+	 Workflow mriqc_wf settings: ['check', 'execution', 'logging', 'monitoring']
+221214-18:31:36,195 nipype.workflow INFO:
+	 [Node] Setting-up "mriqc_wf.anatMRIQC.datalad_get" in "/scratch1/03201/jbwexler/work_dir/mriqc/ds000011_sub-09/mriqc_wf/anatMRIQC/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds000011-mriqc..sourcedata..raw..sub-09..anat..sub-09_T1w.nii.gz/datalad_get".
+221214-18:31:36,202 nipype.workflow INFO:
+	 [Node] Setting-up "mriqc_wf.funcMRIQC.ComputeIQMs.metadata" in "/scratch1/03201/jbwexler/work_dir/mriqc/ds000011_sub-09/mriqc_wf/funcMRIQC/ComputeIQMs/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds000011-mriqc..sourcedata..raw..sub-09..func..sub-09_task-Classificationprobewithoutfeedback_bold.nii.gz/metadata".
+221214-18:31:36,204 nipype.workflow INFO:
+	 [Node] Executing "datalad_get" <mriqc.interfaces.datalad.DataladIdentityInterface>
+221214-18:31:36,205 nipype.workflow INFO:
+	 [Node] Setting-up "mriqc_wf.funcMRIQC.non_steady_state_detector" in "/scratch1/03201/jbwexler/work_dir/mriqc/ds000011_sub-09/mriqc_wf/funcMRIQC/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds000011-mriqc..sourcedata..raw..sub-09..func..sub-09_task-Classificationprobewithoutfeedback_bold.nii.gz/non_steady_state_detector".
+221214-18:31:36,211 nipype.workflow INFO:
+	 [Node] Executing "metadata" <niworkflows.interfaces.bids.ReadSidecarJSON>
+221214-18:31:36,212 nipype.workflow INFO:
+	 [Node] Executing "non_steady_state_detector" <nipype.algorithms.confounds.NonSteadyStateDetector>
+221214-18:31:36,566 nipype.workflow INFO:
+	 [Node] Finished "non_steady_state_detector", elapsed time 0.337717s.
+221214-18:31:37,42 nipype.workflow INFO:
+	 [Node] Finished "datalad_get", elapsed time 0.822449s.
+221214-18:31:37,533 nipype.workflow INFO:
+	 [Node] Finished "metadata", elapsed time 1.305371s.
+221214-18:31:37,640 nipype.workflow INFO:
+	 [Node] Setting-up "mriqc_wf.funcMRIQC.ComputeIQMs.provenance" in "/scratch1/03201/jbwexler/work_dir/mriqc/ds000011_sub-09/mriqc_wf/funcMRIQC/ComputeIQMs/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds000011-mriqc..sourcedata..raw..sub-09..func..sub-09_task-Classificationprobewithoutfeedback_bold.nii.gz/provenance".
+221214-18:31:37,646 nipype.workflow INFO:
+	 [Node] Executing "provenance" <mriqc.interfaces.reports.AddProvenance>
+221214-18:31:37,694 nipype.workflow INFO:
+	 [Node] Finished "provenance", elapsed time 0.048173s.
+221214-18:31:37,764 nipype.workflow INFO:
+	 [Node] Setting-up "mriqc_wf.funcMRIQC.ComputeIQMs.metadata" in "/scratch1/03201/jbwexler/work_dir/mriqc/ds000011_sub-09/mriqc_wf/funcMRIQC/ComputeIQMs/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds000011-mriqc..sourcedata..raw..sub-09..func..sub-09_task-Dualtaskweatherprediction_run-01_bold.nii.gz/metadata".
+221214-18:31:37,765 nipype.workflow INFO:
+	 [Node] Setting-up "mriqc_wf.funcMRIQC.non_steady_state_detector" in "/scratch1/03201/jbwexler/work_dir/mriqc/ds000011_sub-09/mriqc_wf/funcMRIQC/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds000011-mriqc..sourcedata..raw..sub-09..func..sub-09_task-Dualtaskweatherprediction_run-01_bold.nii.gz/non_steady_state_detector".
+221214-18:31:37,771 nipype.workflow INFO:
+	 [Node] Executing "metadata" <niworkflows.interfaces.bids.ReadSidecarJSON>
+221214-18:31:37,771 nipype.workflow INFO:
+	 [Node] Executing "non_steady_state_detector" <nipype.algorithms.confounds.NonSteadyStateDetector>
+221214-18:31:38,37 nipype.workflow INFO:
+	 [Node] Finished "non_steady_state_detector", elapsed time 0.26516s.
+221214-18:31:39,32 nipype.workflow INFO:
+	 [Node] Finished "metadata", elapsed time 1.260841s.
+221214-18:31:39,106 nipype.workflow INFO:
+	 [Node] Setting-up "mriqc_wf.funcMRIQC.ComputeIQMs.provenance" in "/scratch1/03201/jbwexler/work_dir/mriqc/ds000011_sub-09/mriqc_wf/funcMRIQC/ComputeIQMs/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds000011-mriqc..sourcedata..raw..sub-09..func..sub-09_task-Dualtaskweatherprediction_run-01_bold.nii.gz/provenance".
+221214-18:31:39,112 nipype.workflow INFO:
+	 [Node] Executing "provenance" <mriqc.interfaces.reports.AddProvenance>
+221214-18:31:39,170 nipype.workflow INFO:
+	 [Node] Finished "provenance", elapsed time 0.057781s.
+221214-18:31:39,241 nipype.workflow INFO:
+	 [Node] Setting-up "mriqc_wf.funcMRIQC.ComputeIQMs.metadata" in "/scratch1/03201/jbwexler/work_dir/mriqc/ds000011_sub-09/mriqc_wf/funcMRIQC/ComputeIQMs/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds000011-mriqc..sourcedata..raw..sub-09..func..sub-09_task-Dualtaskweatherprediction_run-02_bold.nii.gz/metadata".
+221214-18:31:39,242 nipype.workflow INFO:
+	 [Node] Setting-up "mriqc_wf.funcMRIQC.non_steady_state_detector" in "/scratch1/03201/jbwexler/work_dir/mriqc/ds000011_sub-09/mriqc_wf/funcMRIQC/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds000011-mriqc..sourcedata..raw..sub-09..func..sub-09_task-Dualtaskweatherprediction_run-02_bold.nii.gz/non_steady_state_detector".
+221214-18:31:39,248 nipype.workflow INFO:
+	 [Node] Executing "non_steady_state_detector" <nipype.algorithms.confounds.NonSteadyStateDetector>
+221214-18:31:39,248 nipype.workflow INFO:
+	 [Node] Executing "metadata" <niworkflows.interfaces.bids.ReadSidecarJSON>
+221214-18:31:39,517 nipype.workflow INFO:
+	 [Node] Finished "non_steady_state_detector", elapsed time 0.267548s.
+221214-18:31:40,492 nipype.workflow INFO:
+	 [Node] Finished "metadata", elapsed time 1.243338s.
+221214-18:31:40,572 nipype.workflow INFO:
+	 [Node] Setting-up "mriqc_wf.funcMRIQC.ComputeIQMs.provenance" in "/scratch1/03201/jbwexler/work_dir/mriqc/ds000011_sub-09/mriqc_wf/funcMRIQC/ComputeIQMs/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds000011-mriqc..sourcedata..raw..sub-09..func..sub-09_task-Dualtaskweatherprediction_run-02_bold.nii.gz/provenance".
+221214-18:31:40,579 nipype.workflow INFO:
+	 [Node] Executing "provenance" <mriqc.interfaces.reports.AddProvenance>
+221214-18:31:40,638 nipype.workflow INFO:
+	 [Node] Finished "provenance", elapsed time 0.05752s.
+221214-18:31:40,708 nipype.workflow INFO:
+	 [Node] Setting-up "mriqc_wf.funcMRIQC.ComputeIQMs.metadata" in "/scratch1/03201/jbwexler/work_dir/mriqc/ds000011_sub-09/mriqc_wf/funcMRIQC/ComputeIQMs/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds000011-mriqc..sourcedata..raw..sub-09..func..sub-09_task-Singletaskweatherprediction_run-01_bold.nii.gz/metadata".
+221214-18:31:40,709 nipype.workflow INFO:
+	 [Node] Setting-up "mriqc_wf.funcMRIQC.non_steady_state_detector" in "/scratch1/03201/jbwexler/work_dir/mriqc/ds000011_sub-09/mriqc_wf/funcMRIQC/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds000011-mriqc..sourcedata..raw..sub-09..func..sub-09_task-Singletaskweatherprediction_run-01_bold.nii.gz/non_steady_state_detector".
+221214-18:31:40,716 nipype.workflow INFO:
+	 [Node] Executing "metadata" <niworkflows.interfaces.bids.ReadSidecarJSON>
+221214-18:31:40,734 nipype.workflow INFO:
+	 [Node] Executing "non_steady_state_detector" <nipype.algorithms.confounds.NonSteadyStateDetector>
+221214-18:31:41,39 nipype.workflow INFO:
+	 [Node] Finished "non_steady_state_detector", elapsed time 0.304261s.
+221214-18:31:41,955 nipype.workflow INFO:
+	 [Node] Finished "metadata", elapsed time 1.23831s.
+221214-18:31:42,28 nipype.workflow INFO:
+	 [Node] Setting-up "mriqc_wf.funcMRIQC.ComputeIQMs.provenance" in "/scratch1/03201/jbwexler/work_dir/mriqc/ds000011_sub-09/mriqc_wf/funcMRIQC/ComputeIQMs/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds000011-mriqc..sourcedata..raw..sub-09..func..sub-09_task-Singletaskweatherprediction_run-01_bold.nii.gz/provenance".
+221214-18:31:42,35 nipype.workflow INFO:
+	 [Node] Executing "provenance" <mriqc.interfaces.reports.AddProvenance>
+221214-18:31:42,93 nipype.workflow INFO:
+	 [Node] Finished "provenance", elapsed time 0.057826s.
+221214-18:31:42,164 nipype.workflow INFO:
+	 [Node] Setting-up "mriqc_wf.funcMRIQC.ComputeIQMs.metadata" in "/scratch1/03201/jbwexler/work_dir/mriqc/ds000011_sub-09/mriqc_wf/funcMRIQC/ComputeIQMs/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds000011-mriqc..sourcedata..raw..sub-09..func..sub-09_task-Singletaskweatherprediction_run-02_bold.nii.gz/metadata".
+221214-18:31:42,165 nipype.workflow INFO:
+	 [Node] Setting-up "mriqc_wf.funcMRIQC.non_steady_state_detector" in "/scratch1/03201/jbwexler/work_dir/mriqc/ds000011_sub-09/mriqc_wf/funcMRIQC/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds000011-mriqc..sourcedata..raw..sub-09..func..sub-09_task-Singletaskweatherprediction_run-02_bold.nii.gz/non_steady_state_detector".
+221214-18:31:42,171 nipype.workflow INFO:
+	 [Node] Executing "metadata" <niworkflows.interfaces.bids.ReadSidecarJSON>
+221214-18:31:42,171 nipype.workflow INFO:
+	 [Node] Executing "non_steady_state_detector" <nipype.algorithms.confounds.NonSteadyStateDetector>
+221214-18:31:42,434 nipype.workflow INFO:
+	 [Node] Finished "non_steady_state_detector", elapsed time 0.262315s.
+221214-18:31:43,409 nipype.workflow INFO:
+	 [Node] Finished "metadata", elapsed time 1.237697s.
+221214-18:31:43,483 nipype.workflow INFO:
+	 [Node] Setting-up "mriqc_wf.funcMRIQC.ComputeIQMs.provenance" in "/scratch1/03201/jbwexler/work_dir/mriqc/ds000011_sub-09/mriqc_wf/funcMRIQC/ComputeIQMs/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds000011-mriqc..sourcedata..raw..sub-09..func..sub-09_task-Singletaskweatherprediction_run-02_bold.nii.gz/provenance".
+221214-18:31:43,490 nipype.workflow INFO:
+	 [Node] Executing "provenance" <mriqc.interfaces.reports.AddProvenance>
+221214-18:31:43,549 nipype.workflow INFO:
+	 [Node] Finished "provenance", elapsed time 0.05822s.
+221214-18:31:43,620 nipype.workflow INFO:
+	 [Node] Setting-up "mriqc_wf.funcMRIQC.ComputeIQMs.metadata" in "/scratch1/03201/jbwexler/work_dir/mriqc/ds000011_sub-09/mriqc_wf/funcMRIQC/ComputeIQMs/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds000011-mriqc..sourcedata..raw..sub-09..func..sub-09_task-tonecounting_bold.nii.gz/metadata".
+221214-18:31:43,621 nipype.workflow INFO:
+	 [Node] Setting-up "mriqc_wf.funcMRIQC.non_steady_state_detector" in "/scratch1/03201/jbwexler/work_dir/mriqc/ds000011_sub-09/mriqc_wf/funcMRIQC/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds000011-mriqc..sourcedata..raw..sub-09..func..sub-09_task-tonecounting_bold.nii.gz/non_steady_state_detector".
+221214-18:31:43,628 nipype.workflow INFO:
+	 [Node] Executing "non_steady_state_detector" <nipype.algorithms.confounds.NonSteadyStateDetector>
+221214-18:31:43,628 nipype.workflow INFO:
+	 [Node] Executing "metadata" <niworkflows.interfaces.bids.ReadSidecarJSON>
+221214-18:31:43,895 nipype.workflow INFO:
+	 [Node] Finished "non_steady_state_detector", elapsed time 0.266543s.
+221214-18:31:44,868 nipype.workflow INFO:
+	 [Node] Finished "metadata", elapsed time 1.2396s.
+221214-18:31:44,967 nipype.workflow INFO:
+	 [Node] Setting-up "mriqc_wf.funcMRIQC.ComputeIQMs.provenance" in "/scratch1/03201/jbwexler/work_dir/mriqc/ds000011_sub-09/mriqc_wf/funcMRIQC/ComputeIQMs/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds000011-mriqc..sourcedata..raw..sub-09..func..sub-09_task-tonecounting_bold.nii.gz/provenance".
+221214-18:31:44,979 nipype.workflow INFO:
+	 [Node] Executing "provenance" <mriqc.interfaces.reports.AddProvenance>
+221214-18:31:45,11 nipype.workflow INFO:
+	 [Node] Finished "provenance", elapsed time 0.031099s.
+221214-18:31:45,180 nipype.workflow INFO:
+	 [Node] Setting-up "mriqc_wf.anatMRIQC.conform" in "/scratch1/03201/jbwexler/work_dir/mriqc/ds000011_sub-09/mriqc_wf/anatMRIQC/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds000011-mriqc..sourcedata..raw..sub-09..anat..sub-09_T1w.nii.gz/conform".
+221214-18:31:45,180 nipype.workflow INFO:
+	 [Node] Setting-up "mriqc_wf.anatMRIQC.ComputeIQMs.metadata" in "/scratch1/03201/jbwexler/work_dir/mriqc/ds000011_sub-09/mriqc_wf/anatMRIQC/ComputeIQMs/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds000011-mriqc..sourcedata..raw..sub-09..anat..sub-09_T1w.nii.gz/metadata".
+221214-18:31:45,187 nipype.workflow INFO:
+	 [Node] Executing "metadata" <niworkflows.interfaces.bids.ReadSidecarJSON>
+221214-18:31:45,188 nipype.workflow INFO:
+	 [Node] Executing "conform" <mriqc.interfaces.common.conform_image.ConformImage>
+221214-18:31:45,190 nipype.workflow INFO:
+	 [Node] Setting-up "mriqc_wf.funcMRIQC.sanitize" in "/scratch1/03201/jbwexler/work_dir/mriqc/ds000011_sub-09/mriqc_wf/funcMRIQC/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds000011-mriqc..sourcedata..raw..sub-09..func..sub-09_task-Classificationprobewithoutfeedback_bold.nii.gz/sanitize".
+221214-18:31:45,198 nipype.workflow INFO:
+	 [Node] Executing "sanitize" <niworkflows.interfaces.header.SanitizeImage>
+221214-18:31:45,199 nipype.workflow INFO:
+	 [Node] Setting-up "mriqc_wf.funcMRIQC.sanitize" in "/scratch1/03201/jbwexler/work_dir/mriqc/ds000011_sub-09/mriqc_wf/funcMRIQC/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds000011-mriqc..sourcedata..raw..sub-09..func..sub-09_task-Dualtaskweatherprediction_run-01_bold.nii.gz/sanitize".
+221214-18:31:45,208 nipype.workflow INFO:
+	 [Node] Setting-up "mriqc_wf.funcMRIQC.sanitize" in "/scratch1/03201/jbwexler/work_dir/mriqc/ds000011_sub-09/mriqc_wf/funcMRIQC/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds000011-mriqc..sourcedata..raw..sub-09..func..sub-09_task-Dualtaskweatherprediction_run-02_bold.nii.gz/sanitize".
+221214-18:31:45,209 nipype.workflow INFO:
+	 [Node] Executing "sanitize" <niworkflows.interfaces.header.SanitizeImage>
+221214-18:31:45,217 nipype.workflow INFO:
+	 [Node] Executing "sanitize" <niworkflows.interfaces.header.SanitizeImage>
+221214-18:31:45,217 nipype.workflow INFO:
+	 [Node] Setting-up "mriqc_wf.funcMRIQC.sanitize" in "/scratch1/03201/jbwexler/work_dir/mriqc/ds000011_sub-09/mriqc_wf/funcMRIQC/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds000011-mriqc..sourcedata..raw..sub-09..func..sub-09_task-Singletaskweatherprediction_run-01_bold.nii.gz/sanitize".
+221214-18:31:45,225 nipype.workflow INFO:
+	 [Node] Executing "sanitize" <niworkflows.interfaces.header.SanitizeImage>
+221214-18:31:45,226 nipype.workflow INFO:
+	 [Node] Setting-up "mriqc_wf.funcMRIQC.sanitize" in "/scratch1/03201/jbwexler/work_dir/mriqc/ds000011_sub-09/mriqc_wf/funcMRIQC/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds000011-mriqc..sourcedata..raw..sub-09..func..sub-09_task-Singletaskweatherprediction_run-02_bold.nii.gz/sanitize".
+221214-18:31:45,235 nipype.workflow INFO:
+	 [Node] Setting-up "mriqc_wf.funcMRIQC.sanitize" in "/scratch1/03201/jbwexler/work_dir/mriqc/ds000011_sub-09/mriqc_wf/funcMRIQC/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds000011-mriqc..sourcedata..raw..sub-09..func..sub-09_task-tonecounting_bold.nii.gz/sanitize".
+221214-18:31:45,236 nipype.workflow INFO:
+	 [Node] Executing "sanitize" <niworkflows.interfaces.header.SanitizeImage>
+221214-18:31:45,244 nipype.workflow INFO:
+	 [Node] Executing "sanitize" <niworkflows.interfaces.header.SanitizeImage>
+221214-18:31:45,251 nipype.workflow INFO:
+	 [Node] Finished "sanitize", elapsed time 0.051887s.
+221214-18:31:45,262 nipype.workflow INFO:
+	 [Node] Finished "sanitize", elapsed time 0.052638s.
+221214-18:31:45,297 nipype.workflow INFO:
+	 [Node] Finished "sanitize", elapsed time 0.052135s.
+221214-18:31:45,855 nipype.workflow INFO:
+	 [Node] Finished "conform", elapsed time 0.666338s.
+221214-18:31:46,516 nipype.workflow INFO:
+	 [Node] Finished "metadata", elapsed time 1.327081s.
+221214-18:31:46,724 nipype.workflow INFO:
+	 [Node] Finished "sanitize", elapsed time 1.497428s.
+221214-18:31:46,731 nipype.workflow INFO:
+	 [Node] Finished "sanitize", elapsed time 1.511438s.
+221214-18:31:46,747 nipype.workflow INFO:
+	 [Node] Finished "sanitize", elapsed time 1.50955s.
+221214-18:31:47,232 nipype.workflow INFO:
+	 [Node] Setting-up "mriqc_wf.anatMRIQC.synthstrip_wf.pre_clip" in "/scratch1/03201/jbwexler/work_dir/mriqc/ds000011_sub-09/mriqc_wf/anatMRIQC/synthstrip_wf/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds000011-mriqc..sourcedata..raw..sub-09..anat..sub-09_T1w.nii.gz/pre_clip".
+221214-18:31:47,233 nipype.workflow INFO:
+	 [Node] Setting-up "mriqc_wf.anatMRIQC.AirMaskWorkflow.RotationMask" in "/scratch1/03201/jbwexler/work_dir/mriqc/ds000011_sub-09/mriqc_wf/anatMRIQC/AirMaskWorkflow/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds000011-mriqc..sourcedata..raw..sub-09..anat..sub-09_T1w.nii.gz/RotationMask".
+221214-18:31:47,233 nipype.workflow INFO:
+	 [Node] Setting-up "mriqc_wf.anatMRIQC.ReportsWorkflow.PlotMosaicNoise" in "/scratch1/03201/jbwexler/work_dir/mriqc/ds000011_sub-09/mriqc_wf/anatMRIQC/ReportsWorkflow/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds000011-mriqc..sourcedata..raw..sub-09..anat..sub-09_T1w.nii.gz/PlotMosaicNoise".
+221214-18:31:47,233 nipype.workflow INFO:
+	 [Node] Setting-up "mriqc_wf.funcMRIQC.fMRI_HMC.motion_correct" in "/scratch1/03201/jbwexler/work_dir/mriqc/ds000011_sub-09/mriqc_wf/funcMRIQC/fMRI_HMC/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds000011-mriqc..sourcedata..raw..sub-09..func..sub-09_task-Classificationprobewithoutfeedback_bold.nii.gz/motion_correct".
+221214-18:31:47,234 nipype.workflow INFO:
+	 [Node] Setting-up "mriqc_wf.funcMRIQC.ReportsWorkflow.SpikesMask" in "/scratch1/03201/jbwexler/work_dir/mriqc/ds000011_sub-09/mriqc_wf/funcMRIQC/ReportsWorkflow/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds000011-mriqc..sourcedata..raw..sub-09..func..sub-09_task-Classificationprobewithoutfeedback_bold.nii.gz/SpikesMask".
+221214-18:31:47,234 nipype.workflow INFO:
+	 [Node] Setting-up "mriqc_wf.funcMRIQC.fMRI_HMC.motion_correct" in "/scratch1/03201/jbwexler/work_dir/mriqc/ds000011_sub-09/mriqc_wf/funcMRIQC/fMRI_HMC/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds000011-mriqc..sourcedata..raw..sub-09..func..sub-09_task-Dualtaskweatherprediction_run-01_bold.nii.gz/motion_correct".
+221214-18:31:47,235 nipype.workflow INFO:
+	 [Node] Setting-up "mriqc_wf.funcMRIQC.ReportsWorkflow.SpikesMask" in "/scratch1/03201/jbwexler/work_dir/mriqc/ds000011_sub-09/mriqc_wf/funcMRIQC/ReportsWorkflow/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds000011-mriqc..sourcedata..raw..sub-09..func..sub-09_task-Dualtaskweatherprediction_run-01_bold.nii.gz/SpikesMask".
+221214-18:31:47,236 nipype.workflow INFO:
+	 [Node] Setting-up "mriqc_wf.funcMRIQC.fMRI_HMC.motion_correct" in "/scratch1/03201/jbwexler/work_dir/mriqc/ds000011_sub-09/mriqc_wf/funcMRIQC/fMRI_HMC/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds000011-mriqc..sourcedata..raw..sub-09..func..sub-09_task-Dualtaskweatherprediction_run-02_bold.nii.gz/motion_correct".
+221214-18:31:47,241 nipype.workflow INFO:
+	 [Node] Executing "pre_clip" <niworkflows.interfaces.nibabel.IntensityClip>
+221214-18:31:47,242 nipype.workflow INFO:
+	 [Node] Executing "RotationMask" <mriqc.interfaces.anatomical.RotationMask>
+221214-18:31:47,244 nipype.workflow INFO:
+	 [Node] Executing "SpikesMask" <nipype.interfaces.utility.wrappers.Function>
+221214-18:31:47,246 nipype.workflow INFO:
+	 [Node] Executing "motion_correct" <nipype.interfaces.afni.preprocess.Volreg>
+221214-18:31:47,247 nipype.workflow INFO:
+	 [Node] Executing "SpikesMask" <nipype.interfaces.utility.wrappers.Function>
+221214-18:31:47,248 nipype.workflow INFO:
+	 [Node] Executing "motion_correct" <nipype.interfaces.afni.preprocess.Volreg>
+221214-18:31:47,251 nipype.workflow INFO:
+	 [Node] Setting-up "mriqc_wf.funcMRIQC.ReportsWorkflow.SpikesMask" in "/scratch1/03201/jbwexler/work_dir/mriqc/ds000011_sub-09/mriqc_wf/funcMRIQC/ReportsWorkflow/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds000011-mriqc..sourcedata..raw..sub-09..func..sub-09_task-Dualtaskweatherprediction_run-02_bold.nii.gz/SpikesMask".
+221214-18:31:47,258 nipype.workflow INFO:
+	 [Node] Executing "PlotMosaicNoise" <mriqc.interfaces.viz.PlotMosaic>
+221214-18:31:47,261 nipype.workflow INFO:
+	 [Node] Executing "motion_correct" <nipype.interfaces.afni.preprocess.Volreg>
+221214-18:31:47,262 nipype.workflow INFO:
+	 [Node] Setting-up "mriqc_wf.funcMRIQC.fMRI_HMC.motion_correct" in "/scratch1/03201/jbwexler/work_dir/mriqc/ds000011_sub-09/mriqc_wf/funcMRIQC/fMRI_HMC/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds000011-mriqc..sourcedata..raw..sub-09..func..sub-09_task-Singletaskweatherprediction_run-01_bold.nii.gz/motion_correct".
+221214-18:31:47,263 nipype.workflow INFO:
+	 [Node] Executing "SpikesMask" <nipype.interfaces.utility.wrappers.Function>
+221214-18:31:47,272 nipype.workflow INFO:
+	 [Node] Setting-up "mriqc_wf.funcMRIQC.ReportsWorkflow.SpikesMask" in "/scratch1/03201/jbwexler/work_dir/mriqc/ds000011_sub-09/mriqc_wf/funcMRIQC/ReportsWorkflow/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds000011-mriqc..sourcedata..raw..sub-09..func..sub-09_task-Singletaskweatherprediction_run-01_bold.nii.gz/SpikesMask".
+221214-18:31:47,274 nipype.workflow INFO:
+	 [Node] Executing "motion_correct" <nipype.interfaces.afni.preprocess.Volreg>
+221214-18:31:47,282 nipype.workflow INFO:
+	 [Node] Executing "SpikesMask" <nipype.interfaces.utility.wrappers.Function>
+221214-18:31:47,888 nipype.workflow INFO:
+	 [Node] Finished "RotationMask", elapsed time 0.645866s.
+221214-18:31:48,32 nipype.workflow INFO:
+	 [Node] Finished "motion_correct", elapsed time 0.762754s.
+221214-18:31:48,32 nipype.workflow WARNING:
+	 Storing result file without outputs
+221214-18:31:48,34 nipype.workflow WARNING:
+	 [Node] Error on "mriqc_wf.funcMRIQC.fMRI_HMC.motion_correct" (/scratch1/03201/jbwexler/work_dir/mriqc/ds000011_sub-09/mriqc_wf/funcMRIQC/fMRI_HMC/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds000011-mriqc..sourcedata..raw..sub-09..func..sub-09_task-Classificationprobewithoutfeedback_bold.nii.gz/motion_correct)
+221214-18:31:49,157 nipype.workflow INFO:
+	 [Node] Finished "SpikesMask", elapsed time 1.8817949999999999s.
+221214-18:31:49,157 nipype.workflow WARNING:
+	 Storing result file without outputs
+221214-18:31:49,160 nipype.workflow WARNING:
+	 [Node] Error on "mriqc_wf.funcMRIQC.ReportsWorkflow.SpikesMask" (/scratch1/03201/jbwexler/work_dir/mriqc/ds000011_sub-09/mriqc_wf/funcMRIQC/ReportsWorkflow/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds000011-mriqc..sourcedata..raw..sub-09..func..sub-09_task-Classificationprobewithoutfeedback_bold.nii.gz/SpikesMask)
+221214-18:31:49,160 nipype.workflow ERROR:
+	 Node motion_correct.a0 failed to run on host c207-021.frontera.tacc.utexas.edu.
+221214-18:31:49,160 nipype.workflow ERROR:
+	 Saving crash info to /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/mriqc/ds000011-mriqc/logs/crash-20221214-183149-jbwexler-motion_correct.a0-273397ee-76fd-49cf-bd36-5a13237591e1.txt
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.9/site-packages/mriqc/engine/plugin.py", line 60, in run_node
+    result["result"] = node.run(updatehash=updatehash)
+  File "/opt/conda/lib/python3.9/site-packages/nipype/pipeline/engine/nodes.py", line 524, in run
+    result = self._run_interface(execute=True)
+  File "/opt/conda/lib/python3.9/site-packages/nipype/pipeline/engine/nodes.py", line 642, in _run_interface
+    return self._run_command(execute)
+  File "/opt/conda/lib/python3.9/site-packages/nipype/pipeline/engine/nodes.py", line 750, in _run_command
+    raise NodeExecutionError(
+nipype.pipeline.engine.nodes.NodeExecutionError: Exception raised while executing Node motion_correct.
+
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.9/site-packages/nipype/interfaces/base/core.py", line 454, in aggregate_outputs
+    setattr(outputs, key, val)
+  File "/opt/conda/lib/python3.9/site-packages/nipype/interfaces/base/traits_extension.py", line 330, in validate
+    value = super(File, self).validate(objekt, name, value, return_pathlike=True)
+  File "/opt/conda/lib/python3.9/site-packages/nipype/interfaces/base/traits_extension.py", line 135, in validate
+    self.error(objekt, name, str(value))
+  File "/opt/conda/lib/python3.9/site-packages/traits/base_trait_handler.py", line 74, in error
+    raise TraitError(
+traits.trait_errors.TraitError: The 'oned_matrix_save' trait of a VolregOutputSpec instance must be a pathlike object or string representing an existing file, but a value of '/scratch1/03201/jbwexler/work_dir/mriqc/ds000011_sub-09/mriqc_wf/funcMRIQC/fMRI_HMC/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds000011-mriqc..sourcedata..raw..sub-09..func..sub-09_task-Classificationprobewithoutfeedback_bold.nii.gz/motion_correct/sub-09_task-Classificationprobewithoutfeedback_bold.aff12.1D' <class 'str'> was specified.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.9/site-packages/nipype/interfaces/base/core.py", line 401, in run
+    outputs = self.aggregate_outputs(runtime)
+  File "/opt/conda/lib/python3.9/site-packages/nipype/interfaces/base/core.py", line 461, in aggregate_outputs
+    raise FileNotFoundError(msg)
+FileNotFoundError: No such file or directory '/scratch1/03201/jbwexler/work_dir/mriqc/ds000011_sub-09/mriqc_wf/funcMRIQC/fMRI_HMC/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds000011-mriqc..sourcedata..raw..sub-09..func..sub-09_task-Classificationprobewithoutfeedback_bold.nii.gz/motion_correct/sub-09_task-Classificationprobewithoutfeedback_bold.aff12.1D' for output 'oned_matrix_save' of a Volreg interface
+
+
+221214-18:31:50,502 nipype.workflow INFO:
+	 [Node] Finished "SpikesMask", elapsed time 3.238223s.
+221214-18:31:50,564 nipype.workflow INFO:
+	 [Node] Finished "SpikesMask", elapsed time 3.315921s.
+221214-18:31:50,713 nipype.workflow INFO:
+	 [Node] Finished "SpikesMask", elapsed time 3.429712s.
+221214-18:31:55,285 nipype.workflow INFO:
+	 [Node] Finished "PlotMosaicNoise", elapsed time 8.025888s.
+221214-18:31:56,703 nipype.workflow INFO:
+	 [Node] Finished "pre_clip", elapsed time 9.460808s.
+221214-18:34:03,387 nipype.workflow INFO:
+	 [Node] Finished "motion_correct", elapsed time 136.137765s.
+221214-18:34:03,771 nipype.workflow INFO:
+	 [Node] Finished "motion_correct", elapsed time 136.495856s.
+221214-18:34:05,766 nipype.workflow INFO:
+	 [Node] Finished "motion_correct", elapsed time 138.504041s.
+[ReproMan] waiting for threshold of jobs to complete before continuing...
+[ReproMan] waiting for all jobs to complete before running post-command...
+[ReproMan] post-command...
